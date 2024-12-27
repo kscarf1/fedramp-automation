@@ -2,30 +2,30 @@
 
 ## Summary
 
-This document is to instruct FedRAMP developers and community members on mandatory or recommended style for the structure, format, and organization of constraints. Each requirement MUST have an identifier, guidance text, and examples that either do or do not conform to the best practices.  The FedRAMP Automation Team maintains this guidance in this format to  improve external constraints for code readability, consistency, and quality with minimal effort and less manual review.
+This document is to instruct FedRAMP developers and community members on required and recommended styles for the structure, format, and organization of constraints. Each requirement and recommendation MUST have an identifier, guidance text, and examples that either do or do not conform to the best practices.  The FedRAMP Automation Team maintains this guidance in this format to improve external constraints for code readability, consistency, and quality with minimal effort and less manual review.
 
 ## Requirements
 
 | ID              | Formal Name             | Required or Recommended | Category    |
 |-----------------|-------------------------|-------------------------|-------------|
-| [FRR101](#frr101) | Separate OSCAL External Constraints  | Required | ID |
+| [FRR101](#frr101) | Separate OSCAL External Constraints | Required | ID |
 | [FRR102](#frr102) | Constraints Sorted from Broadest to Narrowest Metapath Target | Required | Metapath; Sorting |
 | [FRR103](#frr103) | Constraints in the Context Sorted Alphabetically by ID | Required | ID; Sorting |
 | [FRR104](#frr104) | Constraints Have a Help URL Property | Required | Structure; Metadata |
 | [FRR105](#frr105) | Constraints Have a Unique ID | Required | ID; Metadata |
-| [FRR106](#frr106) | Constraints Have IDs with Lower Case Letters, Numbers, and Dashes | Required | ID |
+| [FRR106](#frr106) | Constraints Have IDs with Lower-Case Letters, Numbers, and Dashes | Required | ID |
 | [FRR107](#frr107) | Constraints Have an Explicit Severity Level | Required | Structure; Metadata |
-| [FRR108](#frr108) | Constraints with Critical Severity Level Used only for Runtime Failures | Required | Structure; Metadata |
+| [FRR108](#frr108) | Constraints with Critical Severity Level Used Only for Runtime Failures | Required | Structure; Metadata |
 | [FRR109](#frr109) | Expect Constraint Message Field Required | Required | Structure; Metadata |
-| [FR110](#frr110) | Constraint Has a Remark When Overly Complex | Recommended | Structure; Metadata |
-| [FRR111](#frr111) | Constraint Message is Sentence in Active Voice | Recommended | Style |
+| [FRR110](#frr110) | Constraint Has a Remark When Overly Complex | Recommended | Structure; Metadata |
+| [FRR111](#frr111) | Constraint Message Is Sentence in Active Voice | Recommended | Style |
 | [FRR112](#frr112) | IETF BCP14 Keywords in Constraint Messages | Required | Style |
 | [FRR113](#frr113) | Constraints Use Messages without Metaschema and OSCAL Jargon | Required | Style |
-| [FRR114](#frr114) | Constraints Tests and Messages Have Single Item Focus | Recommended | Sequences; Style |
+| [FRR114](#frr114) | Constraint Tests and Messages Have Single Item Focus | Recommended | Sequences; Style |
 | [FRR115](#frr115) | Constraint Messages Have Single Item Hints |  Recommended | Sequences; Style |
-| [FRR116](#frr116) | Constraints Formal Names Required | Required | Structure; Metadata |
-| [FRR117](#frr117) | Limit Informational Constraint Usage | Recommended| Structure; Metadata |
-| [FRR118](#frr118) | Keep Let Bindings Adjacent to Their Constraints | Recommended| Structure; Sorting |
+| [FRR116](#frr116) | Constraint Formal Names Required | Required | Structure; Metadata |
+| [FRR117](#frr117) | Limit Informational Constraint Usage | Recommended | Structure; Metadata |
+| [FRR118](#frr118) | Keep Let Bindings Adjacent to Their Constraints | Recommended | Structure; Sorting |
 
 ### FRR101
 
@@ -37,12 +37,12 @@ State: Required
 
 Categories: ID
 
-Guidance: FedRAMP OSCAL constraints MUST be in an external file or URL. OSCAL model in-line constraints should be avoided and only implemented by NIST for generalized, non-FedRAMP specific constraints.
+Guidance: FedRAMP OSCAL constraints MUST be in an external file or URL. OSCAL model in-line constraints should be avoided and only implemented by NIST for generalized, non-FedRAMP-specific constraints.
 
 <details>
 <summary>Click for important background:</summary>
 
-**NOTE:** At this time, the FedRAMP Automation Team maintains a set of constraints for the core NIST-maintained OSCAL models, not specific to FedRAMP, in the the [`oscal-external-constraints.xml`](./oscal-external-constraints.xml) file. The team intends intends to upstream these changes to the NIST-maintained models and their supporting code base, as proposed in [usnistgov/OSCAL#2050)](https://github.com/usnistgov/OSCAL/issues/2050). Currently, FedRAMP developers implement externalized constraints in this separate file, as this guidance requires and is the only feasible interim solution. However, the test infrastructure purposely ignores this file and does not process its constraints for explicit continuous integration testing. This approach MAY change given the result of the proposal to NIST maintainers or other decisions by FedRAMP's technical leadership, but they are not explicitly within the scope of FedRAMP developer's constraint roadmap and they follow this guidance _only_ when reasonable. FedRAMP developers did not design or implement these constraints as a permanent collection in the constraints inventory.
+**NOTE:** At this time, the FedRAMP Automation Team maintains a set of constraints for the core NIST-maintained OSCAL models, not specific to FedRAMP, in the the [`oscal-external-constraints.xml`](./oscal-external-constraints.xml) file. The team intends intends to upstream these changes to the NIST-maintained models and their supporting code base, as proposed in [usnistgov/OSCAL#2050)](https://github.com/usnistgov/OSCAL/issues/2050). Currently, FedRAMP developers implement externalized constraints in this separate file, as this guidance requires and is the only feasible interim solution. However, the test infrastructure purposely ignores this file and does not process its constraints for explicit continuous integration testing. This approach MAY change, given the result of the proposal to NIST maintainers or other decisions by FedRAMP's technical leadership, but they are not explicitly within the scope of FedRAMP developer's constraint roadmap and they follow this guidance _only_ when reasonable. FedRAMP developers did not design or implement these constraints as a permanent collection in the constraints inventory.
 </details>
 <br/>
 
@@ -50,7 +50,7 @@ Guidance: FedRAMP OSCAL constraints MUST be in an external file or URL. OSCAL mo
 
 #### FRR101 Conformant Example
 
-Below is a conformant example for FRR1.
+Below is a conformant example.
 
 ```xml
 <!-- 
@@ -105,9 +105,9 @@ Below is a conformant example for FRR1.
 
 [back to top](#summary)
 
-#### FRR101 Non-conformant Example
+#### FRR101 Non-Conformant Example
 
-Below is a non-conformant example for FRR1.
+Below is a non-conformant example.
 
 ```xml
 <!--
@@ -195,7 +195,7 @@ Below is a conformant example.
 
 [back to top](#summary)
 
-#### FRR102 Non-conformant Example
+#### FRR102 Non-Conformant Example
 
 Below is a non-conformant example.
 
@@ -251,7 +251,7 @@ State: Required
 
 Categories: ID; Sorting
 
-Guidance: Within a given constraint file, developers MUST sort constraint definitions within a given context so that each constraint is ordered alphabetically by the constraint's `@id`, where upper case letters are sorted before lower case letters.
+Guidance: Within a given constraint file, developers MUST sort constraint definitions within a given context so that each constraint is ordered alphabetically by the constraint's `@id`, where upper-case letters are sorted before lower-case letters.
 
 [back to top](#summary)
 
@@ -283,7 +283,7 @@ Below is a conformant example:
 
 [back to top](#summary)
 
-#### FRR103 Non-conformant Example
+#### FRR103 Non-Conformant Example
 
 Below is a non-conformant example.
 
@@ -322,7 +322,7 @@ State: Required
 
 Categories: Structure; Metadata
 
-Guidance: Developers MUST define only one Metaschema constraint property with a namespace of `https://docs.oasis-open.org/sarif/sarif/v2.1.0`,  name `help-url`, and `value` with a URL to an official, meaningful, and specific explanation to the OSCAL syntax and semantics (from [automate.fedramp.gov/documentation](https://automate.fedramp.gov/documentation/)) that motivate that OSCAL constraint definition in a file.
+Guidance: Developers MUST define only one Metaschema constraint property with a namespace of `https://docs.oasis-open.org/sarif/sarif/v2.1.0`, name `help-url`, and `value` with a URL to an official, meaningful, and specific explanation to the OSCAL syntax and semantics (from [automate.fedramp.gov/documentation](https://automate.fedramp.gov/documentation/)) that motivate that OSCAL constraint definition in a file.
 
 <details>
 
@@ -354,7 +354,7 @@ Below is a conformant example.
 
 [back to top](#summary)
 
-#### FRR104 Non-conformant Example
+#### FRR104 Non-Conformant Example
 
 Below is a non-conformant example.
 
@@ -384,7 +384,7 @@ State: Required
 
 Categories: ID; Metadata
 
-Guidance: Developers MUST define a Metaschema constraint with an `id` flag, and the value of that `id` flag must be unique from all other constraint IDs across all constraint documents FedRAMP and NIST define in core OSCAL.
+Guidance: Developers MUST define a Metaschema constraint with an `id` flag, and the value of that `id` flag MUST be unique from all other constraint IDs across all constraint documents FedRAMP and NIST define in core OSCAL.
 
 [back to top](#summary)
 
@@ -408,7 +408,7 @@ Below is a conformant example.
 
 [back to top](#summary)
 
-#### FRR105 Non-conformant Example
+#### FRR105 Non-Conformant Example
 
 Below is a non-conformant example.
 
@@ -433,7 +433,7 @@ Below is a non-conformant example.
 
 ID: `frr106`
 
-Formal Name: Constraints Have IDs with Lower Case Letters, Numbers, and Dashes
+Formal Name: Constraints Have IDs with Lower-Case Letters, Numbers, and Dashes
 
 State: Required
 
@@ -466,7 +466,7 @@ Below is a conformant example.
 
 [back to top](#summary)
 
-#### FRR106 Non-conformant Example
+#### FRR106 Non-Conformant Example
 
 Below is a non-conformant example.
 
@@ -476,7 +476,7 @@ Below is a non-conformant example.
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
             <!-- 
-                This constraint's @id does not use lowercase letters, numbers, and dashes only.
+                This constraint's @id does not use lower-case letters, numbers, and dashes only.
                 This example does not conform to the developer guide.
             -->
             <expect id="DataCenterUSOnly" target="." test="count(address/country) eq 'US'" level="WARNING">
@@ -524,7 +524,7 @@ Below is a conformant example.
 
 [back to top](#summary)
 
-#### FRR107 Non-conformant Example
+#### FRR107 Non-Conformant Example
 
 Below is a non-conformant example.
 
@@ -549,13 +549,13 @@ Below is a non-conformant example.
 
 ID: `frr108`
 
-Formal Name: Constraints with Critical Severity Level Used only for Runtime Failures
+Formal Name: Constraints with Critical Severity Level Used Only for Runtime Failures
 
 State: Required
 
 Categories: Structure; Metadata
 
-Guidance: Developers MUST only define a Metaschema constraint with a `level` flag with a value of `CRITICAL` if and only if the violation of the constraint will lead to an irrecoverable runtime failure (e.g. a SSP's `import-profile` references a catalog or profile with no valid controls) or undefined behavior in a conformant processor in a consistent way for the majority of use cases.
+Guidance: Developers MUST only define a Metaschema constraint with a `level` flag with a value of `CRITICAL` if and only if the violation of the constraint will lead to an irrecoverable runtime failure (e.g., an SSP's `import-profile` references a catalog or profile with no valid controls) or undefined behavior in a conformant processor in a consistent way for the majority of use cases.
 
 [back to top](#summary)
 
@@ -579,7 +579,7 @@ Below is a conformant example.
 
 [back to top](#summary)
 
-#### FRR108 Non-conformant Example
+#### FRR108 Non-Conformant Example
 
 Below is a non-conformant example.
 
@@ -634,7 +634,7 @@ Below is a conformant example.
 
 [back to top](#summary)
 
-#### FRR109 Non-conformant Example
+#### FRR109 Non-Conformant Example
 
 Below is a non-conformant example.
 
@@ -645,7 +645,7 @@ Below is a non-conformant example.
         <metapath target="/system-security-plan"/>
         <constraints>
             <expect id="ssp-needs-valid-control-source" target="./import-profile" test="@href" level="CRITICAL">
-                <!-- This constraint does not provide a meaningful message for data violates the constraint. It is not conformant with the developer guide. -->
+                <!-- This constraint does not provide a meaningful message for data violating the constraint. It is not conformant with the developer guide. -->
             </expect>
         </constraints>
     </context>
@@ -654,7 +654,7 @@ Below is a non-conformant example.
 
 [back to top](#summary)
 
-### FR110
+### FRR110
 
 ID: `frr110`
 
@@ -668,7 +668,7 @@ Guidance: Developers SHOULD only define a Metaschema constraint with a `remarks`
 
 [back to top](#summary)
 
-#### FR110 Conformant Example
+#### FRR110 Conformant Example
 
 Below is a conformant example.
 
@@ -681,7 +681,7 @@ Below is a conformant example.
             <matches id="ssp-needs-valid-control-source" target="./import-profile" test="@href" datatype="uri-reference" level="CRITICAL">
                 <message>A FedRAMP SSP MUST define a valid URL to the catalog that identifies the controls' requirements it implements.</message>
                 <remarks>
-                    <p>The control requirements a SSP must implement and support are defined in the profile or catalog referenced in b a URL to a file on a computer's filesystem or remote URL.</p>
+                    <p>The control requirements a SSP must implement and support are defined in the profile or catalog referenced in a URL to a file on a computer's filesystem or remote URL.</p>
                     <p>More than other constraints, a valid profile URL is integral for processing of other constraints in this document.</p>
                     <p>Users and intervening software developers should clearly mark that validation failed if this constraint is violated regardless of all others.</p>
                 </remarks>
@@ -693,7 +693,7 @@ Below is a conformant example.
 
 [back to top](#summary)
 
-#### FR110 Non-conformant Example
+#### FRR110 Non-Conformant Example
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -703,7 +703,7 @@ Below is a conformant example.
         <constraints>
             <!-- This constraint has too long of an explanation of the positive requirement for a message. This example does not conform with the developer guide. -->
             <matches id="ssp-needs-valid-control-source" target="./import-profile" test="@href" datatype="uri-reference" level="CRITICAL">
-                <message>A FedRAMP SSP MUST define a valid URL to the catalog that identifies the controls' requirements it implements. The control requirements a SSP must implement and support are defined in the profile or catalog referenced in b a URL to a file on a computer's filesystem or remote URL. More than other constraints, a valid profile URL is integral for processing of other constraints in this document. Users and intervening software developers should clearly mark that validation failed if this constraint is violated regardless of all others.</message>
+                <message>A FedRAMP SSP MUST define a valid URL to the catalog that identifies the controls' requirements it implements. The control requirements a SSP must implement and support are defined in the profile or catalog referenced in a URL to a file on a computer's filesystem or remote URL. More than other constraints, a valid profile URL is integral for processing of other constraints in this document. Users and intervening software developers should clearly mark that validation failed if this constraint is violated regardless of all others.</message>
             </expect>
         </constraints>
     </context>
@@ -716,13 +716,13 @@ Below is a conformant example.
 
 ID: `frr111`
 
-Formal Name: Constraint Message is Sentence in Active Voice
+Formal Name: Constraint Message Is Sentence in Active Voice
 
 State: Recommended
 
 Categories: Style
 
-Guidance: Developers SHOULD define a Metaschema constraint with a `message` field with one sentence with active voice, not passive voice. The subject SHOULD be the document name or abbreviation for the OSCAL model in question. For general constraints (e.g. `metadata`; `back-matter/resources`), the sentence should begin with the subject as "A FedRAMP document requires."
+Guidance: Developers SHOULD define a Metaschema constraint with a `message` field with one sentence with active voice, not passive voice. The subject SHOULD be the document name or abbreviation for the OSCAL model in question. For general constraints (e.g., `metadata`; `back-matter/resources`), the sentence SHOULD begin with the subject as "A FedRAMP document requires."
 
 [back to top](#summary)
 
@@ -747,7 +747,7 @@ Below is a conformant example.
 
 [back to top](#summary)
 
-#### FRR111 Non-conformant Example
+#### FRR111 Non-Conformant Example
 
 Below is a non-conformant example.
 
@@ -759,7 +759,7 @@ Below is a non-conformant example.
             <expect id="data-center-country-code" target="." test="count(address/country) eq 1" level="WARNING">
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-center"/>
                 <!-- The message for this constraint is written in passive voice. It does not conform to the developer guide. -->
-                <message>An explicit country code must be defined here.</message>
+                <message>An explicit country code MUST be defined here.</message>
             </expect>
         </constraints>
     </context>
@@ -778,7 +778,7 @@ State: Required
 
 Categories: Style
 
-Guidance: Developers MUST define a Metaschema constraint with a `message` sentence that conforms with IETF standards regarding capitalized requirement keywords per [BCP14](https://datatracker.ietf.org/doc/bcp14/). The sentence will use MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT,", "SHOULD," "SHOULD NOT," "RECOMMENDED,"  "MAY," and "OPTIONAL" according to BCP14 requirements.
+Guidance: Developers MUST define a Metaschema constraint with a `message` sentence that conforms with IETF standards regarding capitalized requirement keywords per [BCP14](https://datatracker.ietf.org/doc/bcp14/). The sentence will use "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL" according to BCP14 requirements.
 
 [back to top](#summary)
 
@@ -802,7 +802,7 @@ Below is a conformant example.
 
 [back to top](#summary)
 
-#### FRR112 Non-conformant Example
+#### FRR112 Non-Conformant Example
 
 Below is a non-conformant example.
 
@@ -856,7 +856,7 @@ Below is a conformant example.
 
 [back to top](#summary)
 
-#### FRR113 Non-conformant Example
+#### FRR113 Non-Conformant Example
 
 Below is a non-conformant example.
 
@@ -881,13 +881,13 @@ Below is a non-conformant example.
 
 ID: `frr114`
 
-Formal Name: Constraints Tests and Messages Have Single Item Focus
+Formal Name: Constraint Tests and Messages Have Single Item Focus
 
 Categories: Sequences; Style
 
 State: Recommended
 
-Guidance: Developers SHOULD define a Metaschema constraint with `target`, `test`, and `message` fields that test and explain a positive requirement in the singular for an individual item of a sequence (i.e. occurrences of a flag, field, or assembly have a `max-occurs` greater than 1) that conforms to an OSCAL model. Violation paths and messages should discuss an individual item in the singular. The only exception is for quantitative or qualitative analysis of the whole sequence. The development team and community contributors can make a determination, meaning if the constraint is within that exceptional category, on a case-by-case basis, as this is a recommendation and not a requirement.
+Guidance: Developers SHOULD define a Metaschema constraint with `target`, `test`, and `message` fields that test and explain a positive requirement in the singular for an individual item of a sequence (i.e., occurrences of a flag, field, or assembly have a `max-occurs` greater than 1) that conforms to an OSCAL model. Violation paths and messages should discuss an individual item in the singular. The only exception is for quantitative or qualitative analysis of the whole sequence. The development team and community contributors can make a determination, meaning if the constraint is within that exceptional category, on a case-by-case basis, as this is a recommendation and not a requirement.
 
 [back to top](#summary)
 
@@ -901,7 +901,7 @@ Below is a conformant example.
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
             <expect id="data-center-country-code" target="." test="count(address/country) eq 1" level="WARNING">
-                <message>A FedRAMP SSP must define a location for a data center with an explicit country code.</message>
+                <message>A FedRAMP SSP MUST define a location for a data center with an explicit country code.</message>
             </expect>
         </constraints>
     </context>
@@ -910,7 +910,7 @@ Below is a conformant example.
 
 [back to top](#summary)
 
-#### FRR114 Non-conformant Example
+#### FRR114 Non-Conformant Example
 
 Below is a non-conformant example.
 
@@ -942,7 +942,7 @@ Categories: Sequences; Style
 
 State: Recommended
 
-Guidance: Developers SHOULD define a Metaschema constraint with a `message` field that provides contextual hints when it is for an individual item of a sequence (i.e. occurrences of a flag, field, or assembly have a `max-occurs` greater than 1) that conforms to an OSCAL model. If there is an identifier, name, or brief label (of five words or less) as applicable. Messages SHOULD NOT provide hints with machine-oriented data (i.e. fields or flags of [type UUID](https://pages.nist.gov/metaschema/specification/datatypes/#uuid)). Instead, message hints should dereference machine-oriented data to provide human-oriented clues as recommended above.
+Guidance: Developers SHOULD define a Metaschema constraint with a `message` field that provides contextual hints when it is for an individual item of a sequence (i.e., occurrences of a flag, field, or assembly have a `max-occurs` greater than 1) that conforms to an OSCAL model. If there is an identifier, name, or brief label (of five words or less) as applicable. Messages SHOULD NOT provide hints with machine-oriented data (i.e., fields or flags of [type UUID](https://pages.nist.gov/metaschema/specification/datatypes/#uuid)). Instead, message hints should dereference machine-oriented data to provide human-oriented clues as recommended above.
 
 [back to top](#summary)
 
@@ -956,7 +956,7 @@ Below is a conformant example.
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
             <expect id="data-center-country-code-us" target="." test="count(address/country) eq 'US'" level="WARNING">
-                <message>A FedRAMP SSP must define a location for a data center with the country code US for the United States, not {if empty(.) then 'not an empty value' else string(.)}.</message>
+                <message>A FedRAMP SSP MUST define a location for a data center with the country code US for the United States, not {if empty(.) then 'not an empty value' else string(.)}.</message>
             </expect>
         </constraints>
     </context>
@@ -965,7 +965,7 @@ Below is a conformant example.
 
 [back to top](#summary)
 
-#### FRR115 Non-conformant Example
+#### FRR115 Non-Conformant Example
 
 Below is a non-conformant example.
 
@@ -989,7 +989,7 @@ Below is a non-conformant example.
 
 ID: `frr116`
 
-Formal Name: Constraints Formal Names Required
+Formal Name: Constraint Formal Names Required
 
 State: Required
 
@@ -1010,7 +1010,7 @@ Below is a conformant example.
         <constraints>
             <expect id="data-center-country-code-us" target="." test="count(address/country) eq 'US'" level="WARNING">
                 <formal-name>Data Center Locations in the United States</formal-name>
-                <message>A FedRAMP SSP must define locations for data centers that are explicitly in the United States.</message>
+                <message>A FedRAMP SSP MUST define locations for data centers that are explicitly in the United States.</message>
             </expect>
         </constraints>
     </context>
@@ -1019,7 +1019,7 @@ Below is a conformant example.
 
 [back to top](#summary)
 
-#### FRR116 Non-conformant Example
+#### FRR116 Non-Conformant Example
 
 Below is a non-conformant example.
 
@@ -1049,9 +1049,9 @@ State: Recommended
 
 Categories: Structure; Metadata
 
-Guidance: Developers SHOULD only define Metaschema constraints with a severity `level="INFORMATIONAL"` (a.k.a. informational constraints) if and only if the FedRAMP developers clearly document a specific use case where a FedRAMP package reviewer SHOULD review the analysis reported in its `message` field. The constraint SHOULD report an analytical result of processing one or more OSCAL data elements and emitting novel information for that use case. The constraint's `message`, `target`, `test` fields SHOULD NOT only be the inverse of the opposite condition of a `CRITICAL`, `ERROR`, or `WARNING` constraint.
+Guidance: Developers SHOULD only define Metaschema constraints with a severity `level="INFORMATIONAL"` (a.k.a. informational constraints) if and only if the FedRAMP developers clearly document a specific use case where a FedRAMP package reviewer should review the analysis reported in its `message` field. The constraint SHOULD report an analytical result of processing one or more OSCAL data elements and emitting novel information for that use case. The constraint's `message`, `target`, and `test` fields SHOULD NOT only be the inverse of the opposite condition of a `CRITICAL`, `ERROR`, or `WARNING` constraint.
 
-Developers MAY use informational constraints for development and ad-hoc debugging, but such a constraint MUST NOT be merged into a branch for release to downstream stakeholders without project technical leads' approval during code review. That review SHOULD include a review of a documented use case for how FedRAMP package review or alternative stakeholder will act upon this information.
+Developers MAY use informational constraints for development and ad-hoc debugging, but such constraints MUST NOT be merged into a branch for release to downstream stakeholders without project technical leads' approval during code review. That review SHOULD include a review of a documented use case for how FedRAMP package reviewers or alternative stakeholders will act upon this information.
 
 [back to top](#summary)
 
@@ -1065,12 +1065,12 @@ Below is a conformant example.
         <metapath target="/system-security-plan/metadata"/>
         <constraints>
             <!-- 
-                This example conforms because to the developer guide because it analyzes one or more data elements.
+                This example conforms to the developer guide because it analyzes one or more data elements.
                 For the purpose of this example, presume an issue at github.com/GSA/fedramp-automation/issues/XYZ justifies the need.
             -->
             <let var="data-centers-us-count" expression="count(location/prop[@name = 'data-center'])"/>
             <expect id="data-center-country-code-us" target="." test="$data-centers-us-count = 0" level="INFORMATIONAL">
-                <message>This FedRAMP SSP has {$data-centers-us-count} {if $data-centers-us-count = 1 then 'data center' else 'data centers' }. This notional example assumes is important for a reviewer to know for XYZ reason.</message>
+                <message>This FedRAMP SSP has {$data-centers-us-count} {if $data-centers-us-count = 1 then 'data center' else 'data centers' }. This notional example assumes it is important for a reviewer to know for XYZ reason.</message>
             </expect>
         </constraints>
     </context>
@@ -1079,7 +1079,7 @@ Below is a conformant example.
 
 [back to top](#summary)
 
-#### FRR117 Non-conformant Example
+#### FRR117 Non-Conformant Example
 
 Below is a non-conformant example.
 
@@ -1112,7 +1112,7 @@ State: Recommended
 
 Categories: Sorting; Structure
 
-Guidance: Developers MUST define `let` bindings before any given constraint in a `context`. Developers SHOULD define the `let` binding(s) adjacent to its dependencies in a logical order. A logical order is when developers sort the bindings in order of their dependency, where an `expression` of a later binding evaluates a `var` reference to a previous expression's value. If there are multiple `let` bindings with no dependency relationship between them, developers MAY sort the `let` bindings alphabetically by `var` value (where upper case letters are sorted before lower case letters).
+Guidance: Developers MUST define `let` bindings before any given constraint in a `context`. Developers SHOULD define each `let` binding adjacent to its dependencies in a logical order. A logical order is when developers sort the bindings in order of their dependency, where an `expression` of a later binding evaluates a `var` reference to a previous expression's value. If there are multiple `let` bindings with no dependency relationship between them, developers MAY sort the `let` bindings alphabetically by `var` value (where upper-case letters are sorted before lower-case letters).
 
 [back to top](#summary)
 
@@ -1148,7 +1148,7 @@ Below is a conformant example.
 
 [back to top](#summary)
 
-#### FRR118 Non-conformant Example
+#### FRR118 Non-Conformant Example
 
 Below are non-conformant examples.
 
